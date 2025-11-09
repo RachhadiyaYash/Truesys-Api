@@ -103,6 +103,10 @@ app.get("/", (req, res) => {
   res.send("✅ IPO Scraper API is running. Use /scrape to fetch IPO list.");
 });
 
+
+app.get("/ping", (req, res) => {
+  res.json({ pong: true, time: new Date().toISOString() });
+});
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });

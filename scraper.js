@@ -73,7 +73,7 @@ app.get("/scrape", async (req, res) => {
     await page.click(".depository-select");
 
     console.log("⌛ Waiting for IPO list...");
-    const ul = await page.waitForSelector("ul#mui-2", { timeout: 5000 });
+    const ul = await page.waitForSelector("ul#mui-2", { timeout: 15000 });
 
     const items = await ul.evaluate(() =>
       Array.from(document.querySelectorAll("ul#mui-2 li")).map(li => ({
